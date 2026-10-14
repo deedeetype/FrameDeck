@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FrameDeck — manage the art on all your Samsung Frame TVs from your Mac</title>
+<title>FrameDeck: manage the art on all your Samsung Frame TVs from your Mac</title>
 <meta name="description" content="FrameDeck is a free Mac app to upload, mat, preview, display and delete pictures on several Samsung The Frame TVs at once, with resolution checks and free museum art.">
-<meta property="og:title" content="FrameDeck — art manager for Samsung The Frame">
+<meta property="og:title" content="FrameDeck: art manager for Samsung The Frame">
 <meta property="og:description" content="Upload many photos at once, with or without a mat. Browse free museum art. Manage every Frame TV from one Mac app.">
-<meta property="og:image" content="icon.png">
+<meta property="og:image" content="img/hero-frame.jpg">
 <link rel="icon" href="icon.png">
 <style>
 :root{--bg:#0b1020;--panel:#131a30;--line:#26304d;--text:#e9edf7;--mute:#9aa6c4;--accent:#f07a3c;--accent2:#ffb27a;--ok:#5fd39a}
@@ -19,7 +19,7 @@ nav{position:sticky;top:0;z-index:5;background:rgba(11,16,32,.88);backdrop-filte
 nav .wrap{display:flex;align-items:center;gap:22px;height:58px}
 nav b{display:flex;align-items:center;gap:10px;font-size:17px}nav b img{width:28px;height:28px}
 nav a{color:var(--mute);text-decoration:none;font-size:14px}nav a:hover{color:var(--text)}
-nav .sp{flex:1}
+nav .sp{flex:1}nav .links{display:flex;gap:22px}
 .lang{border:1px solid var(--line);border-radius:8px;background:none;color:var(--mute);padding:4px 10px;cursor:pointer;font-size:13px}
 .btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--panel)}
 .btn.primary{background:linear-gradient(135deg,#f07a3c,#e0522b);border-color:transparent;color:#fff}
@@ -31,7 +31,10 @@ nav .sp{flex:1}
 .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .small{font-size:13px;color:var(--mute)}
 .hero .icon{display:grid;place-items:center}
-.hero .icon img{width:min(320px,70%);filter:drop-shadow(0 30px 50px rgba(0,0,0,.55))}
+.hero .icon img{width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.shots{display:grid;gap:26px}.shot{margin:0}.shot img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);display:block}.shot figcaption{color:var(--mute);font-size:14px;margin-top:10px}
+.shots2{grid-template-columns:1fr 1fr}@media(max-width:820px){.shots2{grid-template-columns:1fr}}
+.credit{font-size:12px;color:var(--mute);margin-top:8px}
 section{padding:58px 0;border-top:1px solid var(--line)}
 h2{font-size:30px;margin:0 0 8px;letter-spacing:-.01em}
 .sub{color:var(--mute);margin:0 0 30px;max-width:720px}
@@ -50,7 +53,7 @@ table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;p
 .note{border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;padding:14px 18px;color:var(--mute)}
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:600}details p{color:var(--mute);margin:10px 0 0}
-.coffee{text-align:center;padding:64px 0}
+.coffee{padding:56px 0}.banner{display:flex;gap:22px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#1d2542,#2a1f36);border:1px solid #3a4470;border-radius:20px;padding:26px 30px}.banner .cup{font-size:44px}.banner .txt{flex:1;min-width:240px}.banner h2{font-size:24px;margin:0 0 4px}.banner p{margin:0;color:var(--mute)}
 footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--mute);font-size:13px}
 [data-fr]{display:none}body.fr [data-en]{display:none}body.fr [data-fr]{display:revert}
 body.fr span[data-fr],body.fr b[data-fr],body.fr a[data-fr],body.fr em[data-fr]{display:inline}
@@ -63,11 +66,13 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
 <nav><div class="wrap">
   <b><img src="icon.png" alt=""> FrameDeck</b>
   <span class="sp"></span>
-  <span class="links" style="display:flex;gap:22px">
+  <span class="links">
     <a href="#features"><span data-en>Features</span><span data-fr>Fonctions</span></a>
+    <a href="#screens"><span data-en>Screenshots</span><span data-fr>Captures</span></a>
     <a href="#museums"><span data-en>Museum art</span><span data-fr>Art des musées</span></a>
     <a href="#install"><span data-en>Install</span><span data-fr>Installer</span></a>
     <a href="#faq">FAQ</a>
+    <a href="#support" style="color:var(--accent2)">☕</a>
   </span>
   <button class="lang" id="lang" aria-label="Language">FR</button>
 </div></nav>
@@ -75,8 +80,8 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
 <header class="wrap hero">
   <div>
     <h1><span data-en>One Mac app for the art on <span class="hl">all your Frame TVs.</span></span><span data-fr>Une app Mac pour l’art de <span class="hl">toutes vos TV Frame.</span></span></h1>
-    <p class="lead" data-en>Upload many photos at once — with or without a mat — see what is on each Samsung The Frame, delete, copy between TVs, and browse free museum art. Free, and made by a Frame owner.</p>
-    <p class="lead" data-fr>Téléversez plusieurs photos à la fois — avec ou sans passe-partout — voyez ce qui est sur chaque Samsung The Frame, supprimez, copiez d’une TV à l’autre et parcourez de l’art de musée gratuit. Gratuit, fait par un propriétaire de Frame.</p>
+    <p class="lead" data-en>Upload many photos at once, with or without a mat. See what is on each Samsung The Frame, delete, copy between TVs, and browse free museum art. Free, and made by a Frame owner.</p>
+    <p class="lead" data-fr>Téléversez plusieurs photos à la fois, avec ou sans passe-partout. Voyez ce qui est sur chaque Samsung The Frame, supprimez, copiez d’une TV à l’autre et parcourez de l’art de musée gratuit. Gratuit, fait par un propriétaire de Frame.</p>
     <div class="cta">
       <a class="btn primary" href="https://github.com/deedeetype/FrameDeck/releases/latest"><span data-en>Download for Mac (.dmg)</span><span data-fr>Télécharger pour Mac (.dmg)</span></a>
       <a class="btn" href="#install"><span data-en>How to install</span><span data-fr>Comment l’installer</span></a>
@@ -84,7 +89,7 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
     <p class="small" style="margin-top:14px" data-en>macOS 12+ · Apple Silicon or Intel · Free · Not affiliated with Samsung</p>
     <p class="small" style="margin-top:14px" data-fr>macOS 12+ · Apple Silicon ou Intel · Gratuit · Non affilié à Samsung</p>
   </div>
-  <div class="icon"><img src="icon.png" alt="FrameDeck app icon"></div>
+  <div class="icon"><img src="img/hero-frame.jpg" alt="An art TV on a wall showing a painting with a cream mat" class="hero-img"></div>
 </header>
 
 <section id="features"><div class="wrap">
@@ -97,18 +102,38 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
     <div class="card"><div class="e">📺</div><h3 data-en>See every TV’s library</h3><h3 data-fr>La bibliothèque de chaque TV</h3>
       <p data-en>Thumbnails of what is on each Frame, which one is showing now, and one view across all of them.</p><p data-fr>Les vignettes de ce qui se trouve sur chaque Frame, laquelle est affichée, et une vue commune à toutes.</p></div>
     <div class="card"><div class="e">🎯</div><h3 data-en>Choose what each TV displays</h3><h3 data-fr>Choisir l’image de chaque TV</h3>
-      <p data-en>Pick one picture per TV and display them all in one click. The app asks the TV to confirm — it never says “done” on a guess.</p><p data-fr>Choisissez une image par TV et affichez-les toutes d’un clic. L’app demande à la TV de confirmer : elle ne dit jamais « fait » à l’aveugle.</p></div>
+      <p data-en>Pick one picture per TV and display them all in one click. The app asks the TV to confirm. It never says “done” on a guess.</p><p data-fr>Choisissez une image par TV et affichez-les toutes d’un clic. L’app demande à la TV de confirmer. Elle ne dit jamais « fait » à l’aveugle.</p></div>
     <div class="card"><div class="e">🗑️</div><h3 data-en>Delete and copy</h3><h3 data-fr>Supprimer et copier</h3>
       <p data-en>Select several pictures and delete them, or copy them to other TVs. Duplicates are detected so nothing is sent twice.</p><p data-fr>Sélectionnez plusieurs images pour les supprimer ou les copier vers d’autres TV. Les doublons sont détectés : rien n’est envoyé deux fois.</p></div>
     <div class="card"><div class="e">🔍</div><h3 data-en>Resolution &amp; sharpness check</h3><h3 data-fr>Contrôle de résolution et de netteté</h3>
       <p data-en>Each photo is checked against the 3840×2160 screen, with a sharpness badge showing how much the TV will have to enlarge it.</p><p data-fr>Chaque photo est comparée à l’écran 3840×2160, avec une pastille de netteté qui montre de combien la TV devra l’agrandir.</p></div>
-    <div class="card"><div class="e">✂️</div><h3 data-en>Fill, fit or blur — your call</h3><h3 data-fr>Remplir, ajuster ou flouter</h3>
+    <div class="card"><div class="e">✂️</div><h3 data-en>Fill, fit or blur: your call</h3><h3 data-fr>Remplir, ajuster ou flouter</h3>
       <p data-en>Photos that are not 16:9 get a recommended treatment (crop, fit, or fit with a soft blurred background), with a live preview.</p><p data-fr>Les photos qui ne sont pas en 16:9 reçoivent un traitement recommandé (recadrage, ajustement ou fond flou), avec aperçu en direct.</p></div>
     <div class="card"><div class="e">🔄</div><h3 data-en>Automatic rotation &amp; Art Mode</h3><h3 data-fr>Rotation automatique et mode Art</h3>
       <p data-en>Turn picture rotation on or off (3 minutes to a week, shuffled or in order), switch Art Mode and set brightness.</p><p data-fr>Activez ou coupez la rotation (de 3 minutes à une semaine, aléatoire ou dans l’ordre), le mode Art et la luminosité.</p></div>
     <div class="card"><div class="e">✏️</div><h3 data-en>Name your TVs, edit their address</h3><h3 data-fr>Nommer vos TV, modifier leur adresse</h3>
       <p data-en>Rename each TV, see and change its IP address (handy when your router hands out a new one), or remove a TV.</p><p data-fr>Renommez chaque TV, voyez et modifiez son adresse IP (pratique quand le routeur en attribue une nouvelle) ou retirez une TV.</p></div>
   </div>
+</div></section>
+
+<section id="screens"><div class="wrap">
+  <h2><span data-en>See it in action</span><span data-fr>L’app en action</span></h2>
+  <p class="sub" data-en>Real screens from the app. The artworks shown are public-domain paintings from the Met and the Cleveland Museum of Art, on two simulated Frame TVs.</p>
+  <p class="sub" data-fr>De vrais écrans de l’app. Les œuvres affichées sont des peintures du domaine public du Met et du Cleveland Museum of Art, sur deux TV Frame simulées.</p>
+  <div class="shots">
+    <figure class="shot"><img src="img/app-library.jpg" alt="FrameDeck library view showing the pictures on two Frame TVs" loading="lazy">
+      <figcaption data-en>Library: every picture on every TV in one view, with the one currently displayed marked.</figcaption><figcaption data-fr>Bibliothèque : toutes les images de toutes les TV dans une seule vue, avec celle qui est affichée.</figcaption></figure>
+    <div class="shots shots2">
+      <figure class="shot"><img src="img/app-upload.jpg" alt="FrameDeck upload view with mat preview and sharpness badges" loading="lazy">
+        <figcaption data-en>Upload: mat preview, resolution check and sharpness badge for each photo.</figcaption><figcaption data-fr>Téléversement : aperçu du passe-partout, contrôle de résolution et pastille de netteté pour chaque photo.</figcaption></figure>
+      <figure class="shot"><img src="img/app-museums.jpg" alt="FrameDeck museum browser with selected artworks" loading="lazy">
+        <figcaption data-en>Museums: browse free art, tick what you like, send it to your TVs.</figcaption><figcaption data-fr>Musées : parcourez l’art gratuit, cochez vos choix et envoyez-les à vos TV.</figcaption></figure>
+    </div>
+    <figure class="shot"><img src="img/app-settings.jpg" alt="FrameDeck settings with automatic rotation and brightness" loading="lazy">
+      <figcaption data-en>Settings: automatic rotation, Art Mode, brightness, and the TV’s name and address.</figcaption><figcaption data-fr>Réglages : rotation automatique, mode Art, luminosité, nom et adresse de la TV.</figcaption></figure>
+  </div>
+  <p class="credit" data-en>Header image: an illustration made for this page, with John Singer Sargent, “Sunset” (The Met, CC0). It is not a Samsung product photo.</p>
+  <p class="credit" data-fr>Image d’en-tête : une illustration faite pour cette page, avec John Singer Sargent, « Sunset » (The Met, CC0). Ce n’est pas une photo de produit Samsung.</p>
 </div></section>
 
 <section id="sharp"><div class="wrap">
@@ -122,8 +147,8 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
     <tr><td><span data-en>up to ×3</span><span data-fr>jusqu’à ×3</span></td><td><span class="pill p-soft"><span data-en>Slightly soft</span><span data-fr>Un peu floue</span></span></td></tr>
     <tr><td><span data-en>more than ×3</span><span data-fr>plus de ×3</span></td><td><span class="pill p-blurry"><span data-en>Blurry</span><span data-fr>Floue</span></span></td></tr>
   </table>
-  <p class="small" style="margin-top:12px" data-en>It measures resolution only — it cannot tell if a photo was out of focus to begin with.</p>
-  <p class="small" style="margin-top:12px" data-fr>Elle mesure la résolution seulement — elle ne détecte pas une photo déjà floue.</p>
+  <p class="small" style="margin-top:12px" data-en>It measures resolution only. It cannot tell if a photo was out of focus to begin with.</p>
+  <p class="small" style="margin-top:12px" data-fr>Elle mesure la résolution seulement. Elle ne détecte pas une photo déjà floue.</p>
 </div></section>
 
 <section id="museums"><div class="wrap">
@@ -144,10 +169,10 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
   <p class="sub" data-en>FrameDeck is not yet signed with a paid Apple Developer certificate, so macOS asks for a one-time confirmation.</p>
   <p class="sub" data-fr>FrameDeck n’est pas encore signée avec un certificat Apple Developer payant : macOS demande donc une confirmation, une seule fois.</p>
   <ol class="steps">
-    <li><span data-en><b>Download</b> the latest <code>.dmg</code> from the <a href="https://github.com/deedeetype/FrameDeck/releases/latest">Releases page</a> (choose <code>arm64</code> for Apple Silicon M1–M4, the other one for Intel).</span><span data-fr><b>Téléchargez</b> le dernier <code>.dmg</code> sur la <a href="https://github.com/deedeetype/FrameDeck/releases/latest">page Releases</a> (<code>arm64</code> pour Apple Silicon M1–M4, l’autre pour Intel).</span></li>
+    <li><span data-en><b>Download</b> the latest <code>.dmg</code> from the <a href="https://github.com/deedeetype/FrameDeck/releases/latest">Releases page</a> (choose <code>arm64</code> for Apple Silicon M1 to M4, the other one for Intel).</span><span data-fr><b>Téléchargez</b> le dernier <code>.dmg</code> sur la <a href="https://github.com/deedeetype/FrameDeck/releases/latest">page Releases</a> (<code>arm64</code> pour Apple Silicon M1 à M4, l’autre pour Intel).</span></li>
     <li><span data-en>Open it and <b>drag FrameDeck into Applications</b>.</span><span data-fr>Ouvrez-le et <b>glissez FrameDeck dans Applications</b>.</span></li>
     <li><span data-en>First launch: <b>right-click FrameDeck → Open → Open</b>. If macOS still refuses, go to System Settings → Privacy &amp; Security and click “Open Anyway”.</span><span data-fr>Premier lancement : <b>clic droit sur FrameDeck → Ouvrir → Ouvrir</b>. Si macOS refuse encore, allez dans Réglages Système → Confidentialité et sécurité, puis « Ouvrir quand même ».</span></li>
-    <li><span data-en>Allow access to your <b>local network</b> when macOS asks — the app needs it to talk to your TVs.</span><span data-fr>Autorisez l’accès au <b>réseau local</b> quand macOS le demande — l’app en a besoin pour parler à vos TV.</span></li>
+    <li><span data-en>Allow access to your <b>local network</b> when macOS asks. The app needs it to talk to your TVs.</span><span data-fr>Autorisez l’accès au <b>réseau local</b> quand macOS le demande. L’app en a besoin pour parler à vos TV.</span></li>
     <li><span data-en>Click <b>+ Add a TV</b>, then <b>accept the request on the TV screen</b>.</span><span data-fr>Cliquez sur <b>+ Ajouter une TV</b>, puis <b>acceptez la demande sur l’écran de la TV</b>.</span></li>
   </ol>
   <h3 style="margin-top:28px" data-en>On the TV</h3><h3 style="margin-top:28px" data-fr>Sur la TV</h3>
@@ -157,8 +182,8 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
 
 <section id="tested"><div class="wrap">
   <h2><span data-en>Honest status</span><span data-fr>État honnête</span></h2>
-  <div class="note" data-en><b>Tested on the author’s own Frame TVs</b>, including the QN50LS03DAFXZC. Other models and firmware versions may behave differently — Samsung does not publish this protocol, and a TV update can change it. If something fails, please <a href="https://github.com/deedeetype/FrameDeck/issues">open an issue</a> with your TV model.</div>
-  <div class="note" data-fr><b>Testée sur les propres TV Frame de l’auteur</b>, dont la QN50LS03DAFXZC. D’autres modèles et versions du logiciel peuvent se comporter autrement — Samsung ne publie pas ce protocole, et une mise à jour de la TV peut le changer. En cas de problème, <a href="https://github.com/deedeetype/FrameDeck/issues">ouvrez un ticket</a> en indiquant le modèle de votre TV.</div>
+  <div class="note" data-en><b>Tested on the author’s own Frame TVs</b>, including the QN50LS03DAFXZC. Other models and firmware versions may behave differently, because Samsung does not publish this protocol, and a TV update can change it. If something fails, please <a href="https://github.com/deedeetype/FrameDeck/issues">open an issue</a> with your TV model.</div>
+  <div class="note" data-fr><b>Testée sur les propres TV Frame de l’auteur</b>, dont la QN50LS03DAFXZC. D’autres modèles et versions du logiciel peuvent se comporter autrement, car Samsung ne publie pas ce protocole, et une mise à jour de la TV peut le changer. En cas de problème, <a href="https://github.com/deedeetype/FrameDeck/issues">ouvrez un ticket</a> en indiquant le modèle de votre TV.</div>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -172,15 +197,20 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
 </div></section>
 
 <section class="coffee" id="support"><div class="wrap">
-  <h2><span data-en>Enjoying FrameDeck?</span><span data-fr>Vous aimez FrameDeck ?</span></h2>
-  <p class="sub" style="margin:8px auto 22px" data-en>It is free and always will be for the basics. A coffee helps me keep it working when Samsung changes things.</p>
-  <p class="sub" style="margin:8px auto 22px" data-fr>Elle est gratuite. Un café m’aide à la garder fonctionnelle quand Samsung change les choses.</p>
-  <a class="btn primary" id="coffee" href="https://www.buymeacoffee.com/" hidden>☕ <span data-en>Buy me a coffee</span><span data-fr>Offrez-moi un café</span></a>
+  <div class="banner">
+    <div class="cup">☕</div>
+    <div class="txt">
+      <h2><span data-en>Enjoying FrameDeck?</span><span data-fr>Vous aimez FrameDeck ?</span></h2>
+      <p data-en>It is free. A coffee helps me keep it working when Samsung changes things. Nothing is locked behind it.</p>
+      <p data-fr>Elle est gratuite. Un café m’aide à la garder fonctionnelle quand Samsung change les choses. Rien n’est verrouillé derrière.</p>
+    </div>
+    <a class="btn primary" id="coffee" href="#support" target="_blank" rel="noopener">☕ <span data-en>Buy me a coffee</span><span data-fr>Offrez-moi un café</span></a>
+  </div>
 </div></section>
 
 <footer><div class="wrap">
-  <p data-en>FrameDeck is an independent project. It is <b>not affiliated with, endorsed by or sponsored by Samsung</b>. “Samsung” and “The Frame” are trademarks of Samsung Electronics Co., Ltd. Provided “as is”, without warranty — use at your own risk.</p>
-  <p data-fr>FrameDeck est un projet indépendant, <b>non affilié, ni approuvé, ni parrainé par Samsung</b>. « Samsung » et « The Frame » sont des marques de Samsung Electronics Co., Ltd. Fournie « telle quelle », sans garantie — à utiliser à vos risques.</p>
+  <p data-en>FrameDeck is an independent project. It is <b>not affiliated with, endorsed by or sponsored by Samsung</b>. “Samsung” and “The Frame” are trademarks of Samsung Electronics Co., Ltd. Provided “as is”, without warranty. Use at your own risk.</p>
+  <p data-fr>FrameDeck est un projet indépendant, <b>non affilié, ni approuvé, ni parrainé par Samsung</b>. « Samsung » et « The Frame » sont des marques de Samsung Electronics Co., Ltd. Fournie « telle quelle », sans garantie, à utiliser à vos risques.</p>
   <p data-en>Built on <a href="https://github.com/xchwarze/samsung-tv-ws-api">samsungtvws</a> (LGPL-3.0), Electron, Pillow. Museum images come from the open-access programs of the Met, the Cleveland Museum of Art and the Rijksmuseum; credit and source stay with each work.</p>
   <p data-fr>Construite avec <a href="https://github.com/xchwarze/samsung-tv-ws-api">samsungtvws</a> (LGPL-3.0), Electron et Pillow. Les images de musée viennent des programmes d’accès libre du Met, du Cleveland Museum of Art et du Rijksmuseum ; l’attribution et la source restent liées à chaque œuvre.</p>
   <p><a href="https://github.com/deedeetype/FrameDeck">GitHub</a> · <a href="https://github.com/deedeetype/FrameDeck/issues">Issues</a></p>
@@ -188,11 +218,7 @@ h3[data-fr]{display:none}body.fr h3[data-fr]{display:block}body.fr h3[data-en]{d
 
 <script>
 (function () {
-  // Put your Buy Me a Coffee page here; the button stays hidden while this is empty.
-  var COFFEE_URL = "";
-  var c = document.getElementById("coffee");
-  if (COFFEE_URL) { c.href = COFFEE_URL; c.hidden = false; }
-  else { c.parentNode.querySelectorAll(".sub").forEach(function (p) { p.style.display = "none"; }); c.closest("section").style.display = "none"; }
+  // Buy Me a Coffee page: set the href of the #coffee button above to your link.
   var fr = (localStorage.getItem("fd-lang") || (navigator.language || "").slice(0, 2)) === "fr";
   function apply() { document.body.classList.toggle("fr", fr); document.documentElement.lang = fr ? "fr" : "en"; document.getElementById("lang").textContent = fr ? "EN" : "FR"; }
   document.getElementById("lang").addEventListener("click", function () { fr = !fr; localStorage.setItem("fd-lang", fr ? "fr" : "en"); apply(); });
