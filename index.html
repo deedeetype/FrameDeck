@@ -97,7 +97,7 @@ header.wrap,section,footer{position:relative;z-index:1}
     <a href="#museums"><span data-en>Museum art</span><span data-fr>Art des musées</span></a>
     <a href="#install"><span data-en>Install</span><span data-fr>Installer</span></a>
     <a href="#faq">FAQ</a>
-    <a href="#support" style="color:var(--accent2)">☕</a>
+    <a href="https://buymeacoffee.com/davidlaborg" target="_blank" rel="noopener" style="color:var(--accent2)" aria-label="Buy me a coffee">☕</a>
   </span>
   <button class="lang" id="lang" aria-label="Language">FR</button>
 </div></nav>
@@ -108,11 +108,11 @@ header.wrap,section,footer{position:relative;z-index:1}
     <p class="lead" data-en>Upload many photos at once, with or without a mat. See what is on each Samsung The Frame, delete, copy between TVs, and browse free museum art. Free, and made by a Frame owner.</p>
     <p class="lead" data-fr>Téléversez plusieurs photos à la fois, avec ou sans passe-partout. Voyez ce qui est sur chaque Samsung The Frame, supprimez, copiez d’une TV à l’autre et parcourez de l’art de musée gratuit. Gratuit, fait par un propriétaire de Frame.</p>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/deedeetype/FrameDeck/releases/latest"><span data-en>Download for Mac (.dmg)</span><span data-fr>Télécharger pour Mac (.dmg)</span></a>
+      <a class="btn primary" id="dl" href="https://github.com/deedeetype/FrameDeck/releases/latest/download/FrameDeck-arm64.dmg" download="FrameDeck-arm64.dmg"><span data-en>Download for Mac (.dmg)</span><span data-fr>Télécharger pour Mac (.dmg)</span></a>
       <a class="btn" href="#install"><span data-en>How to install</span><span data-fr>Comment l’installer</span></a>
     </div>
-    <p class="small" style="margin-top:14px" data-en>macOS 12+ · Apple Silicon or Intel · Free · Not affiliated with Samsung</p>
-    <p class="small" style="margin-top:14px" data-fr>macOS 12+ · Apple Silicon ou Intel · Gratuit · Non affilié à Samsung</p>
+    <p class="small" style="margin-top:14px" data-en>Mac with Apple Silicon (M1 or later) · Free · Not affiliated with Samsung</p>
+    <p class="small" style="margin-top:14px" data-fr>Mac Apple Silicon (M1 ou plus récent) · Gratuit · Non affilié à Samsung</p>
   </div>
   <div class="icon"><img src="img/hero-frame.jpg" alt="An art TV on a wall showing a painting with a cream mat" class="hero-img" data-speed="-0.07"></div>
 </header>
@@ -194,7 +194,7 @@ header.wrap,section,footer{position:relative;z-index:1}
   <p class="sub rv" data-en>FrameDeck is not yet signed with a paid Apple Developer certificate, so macOS asks for a one-time confirmation.</p>
   <p class="sub rv" data-fr>FrameDeck n’est pas encore signée avec un certificat Apple Developer payant : macOS demande donc une confirmation, une seule fois.</p>
   <ol class="steps">
-    <li class="rv left"><span data-en><b>Download</b> the latest <code>.dmg</code> from the <a href="https://github.com/deedeetype/FrameDeck/releases/latest">Releases page</a> (choose <code>arm64</code> for Apple Silicon M1 to M4, the other one for Intel).</span><span data-fr><b>Téléchargez</b> le dernier <code>.dmg</code> sur la <a href="https://github.com/deedeetype/FrameDeck/releases/latest">page Releases</a> (<code>arm64</code> pour Apple Silicon M1 à M4, l’autre pour Intel).</span></li>
+    <li class="rv left"><span data-en><b>Download</b> <a href="https://github.com/deedeetype/FrameDeck/releases/latest/download/FrameDeck-arm64.dmg" download="FrameDeck-arm64.dmg">FrameDeck-arm64.dmg</a> (Apple Silicon, M1 or later). The download starts right away. All versions are on the <a href="https://github.com/deedeetype/FrameDeck/releases">Releases page</a>.</span><span data-fr><b>Téléchargez</b> <a href="https://github.com/deedeetype/FrameDeck/releases/latest/download/FrameDeck-arm64.dmg" download="FrameDeck-arm64.dmg">FrameDeck-arm64.dmg</a> (Apple Silicon, M1 ou plus récent). Le téléchargement démarre tout de suite. Toutes les versions sont sur la <a href="https://github.com/deedeetype/FrameDeck/releases">page Releases</a>.</span></li>
     <li class="rv left"><span data-en>Open it and <b>drag FrameDeck into Applications</b>.</span><span data-fr>Ouvrez-le et <b>glissez FrameDeck dans Applications</b>.</span></li>
     <li class="rv left"><span data-en>First launch: <b>right-click FrameDeck → Open → Open</b>. If macOS still refuses, go to System Settings → Privacy &amp; Security and click “Open Anyway”.</span><span data-fr>Premier lancement : <b>clic droit sur FrameDeck → Ouvrir → Ouvrir</b>. Si macOS refuse encore, allez dans Réglages Système → Confidentialité et sécurité, puis « Ouvrir quand même ».</span></li>
     <li class="rv left"><span data-en>Allow access to your <b>local network</b> when macOS asks. The app needs it to talk to your TVs.</span><span data-fr>Autorisez l’accès au <b>réseau local</b> quand macOS le demande. L’app en a besoin pour parler à vos TV.</span></li>
@@ -229,7 +229,7 @@ header.wrap,section,footer{position:relative;z-index:1}
       <p data-en>It is free. A coffee helps me keep it working when Samsung changes things. Nothing is locked behind it.</p>
       <p data-fr>Elle est gratuite. Un café m’aide à la garder fonctionnelle quand Samsung change les choses. Rien n’est verrouillé derrière.</p>
     </div>
-    <a class="btn primary" id="coffee" href="#support" target="_blank" rel="noopener">☕ <span data-en>Buy me a coffee</span><span data-fr>Offrez-moi un café</span></a>
+    <a class="btn primary" id="coffee" href="https://buymeacoffee.com/davidlaborg" target="_blank" rel="noopener">☕ <span data-en>Buy me a coffee</span><span data-fr>Offrez-moi un café</span></a>
   </div>
 </div></section>
 
@@ -243,7 +243,6 @@ header.wrap,section,footer{position:relative;z-index:1}
 
 <script>
 (function () {
-  // Buy Me a Coffee page: set the href of the #coffee button above to your link.
   var fr = (localStorage.getItem("fd-lang") || (navigator.language || "").slice(0, 2)) === "fr";
   function apply() { document.body.classList.toggle("fr", fr); document.documentElement.lang = fr ? "fr" : "en"; document.getElementById("lang").textContent = fr ? "EN" : "FR"; }
   document.getElementById("lang").addEventListener("click", function () { fr = !fr; localStorage.setItem("fd-lang", fr ? "fr" : "en"); apply(); });

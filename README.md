@@ -10,3 +10,6 @@ display / delete / copy, resolution and sharpness checks, automatic rotation, an
 
 Built on [samsungtvws](https://github.com/xchwarze/samsung-tv-ws-api) (LGPL-3.0), Electron and Pillow.
 Problems or questions: [open an issue](https://github.com/deedeetype/FrameDeck/issues) with your TV model.
+
+**Download:** [FrameDeck-arm64.dmg](https://github.com/deedeetype/FrameDeck/releases/latest/download/FrameDeck-arm64.dmg) (Mac with Apple Silicon).
+If you enjoy it: [buy me a coffee](https://buymeacoffee.com/davidlaborg).
